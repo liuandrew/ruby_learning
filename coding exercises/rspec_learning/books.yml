@@ -1,0 +1,21 @@
+---
+- !ruby/object:Book
+  title: Javascript
+  author: Crockford
+  category: :development
+- !ruby/object:Book
+  title: Web Standards
+  author: Zeldman
+  category: :design
+- !ruby/object:Book
+  title: Think
+  author: Krug
+  category: :usability
+- !ruby/object:Book
+  title: Javascript Patterns
+  author: Stefanov
+  category: :development
+- !ruby/object:Book
+  title: Responsive Web Design
+  author: Marcotte
+  category: :design

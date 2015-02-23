@@ -1,0 +1,12 @@
+--- !ruby/object:Dragon
+strength: 4
+speed: 4
+color: green
+--- !ruby/object:Dragon
+strength: 4
+speed: 8
+color: green
+--- !ruby/object:Dragon
+strength: 4
+speed: 5
+color: green
