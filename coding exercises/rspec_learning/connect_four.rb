@@ -176,5 +176,5 @@ class ConnectFourBoard
     end
 end
 
-#board = ConnectFourBoard.new
-#board.start
+board = ConnectFourBoard.new
+board.start
