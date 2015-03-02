@@ -1,4 +1,5 @@
 require_relative "./board.rb"
+require "yaml"
 
 class ChessGame
     attr_reader :board
@@ -14,6 +15,17 @@ class ChessGame
             break if turn
         end
         nil
+    end
+    
+    def save_file
+        yaml = YAML::dump(@board)
+        save_file = File.new("chess_save.txt", "r+")
+        save_file.write(yaml)
+    end
+    
+    def load_file
+        load_file = File.new("chess_save.txt")
+        @board = YAML::load(load_file)
     end
     
     def turn
@@ -53,8 +65,17 @@ class ChessGame
                 puts "#{change_team(@whos_turn)} wins!"
                 return :surrender
             end
-        end
-        if !(input =~ /^\D\d$/)
+        elsif input.downcase == "save"
+            save_file
+            puts "Game file has been saved"
+            return false
+        elsif input.downcase == "load"
+            load_file
+            puts "Previous game has been loaded"
+            puts "Here is the current board:"
+            @board.display_board
+            return false
+        elsif !(input =~ /^\D\d$/)
             puts "That was not a valid selection"
             return false
         end
